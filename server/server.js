@@ -21,8 +21,8 @@ app.use(cors({origin:process.env.CLIENT_URL,credentials:true,
 app.use("/api/fertilizer",fertilizerRoutes);
 app.use("/api/ai",aiRoutes);
 app.use("/api/analytics",analyticsRoutes);
- const PORT=5000;
+// const PORT=5000;
  mongoose.connect(process.env.MONGO_URL) .then(()=>{
   console.log('mongodb connected');
-  app.listen(PORT,()=>console.log(`server running ${PORT}`))
+  app.listen(process.env.PORT,()=>console.log(`server running ${process.env.PORT}`))
 })
